@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1200">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- mouse cursor -->
+    <div id="mouse-cursor"><div></div></div>
+
+    <!-- intro - start -->
+    <div id="intro">
+        <!-- keyword - start -->
+        <div class="keyword">
+            <div class="word">
+                 <ul class="row">
+                    <li>ANALYSIS</li>
+                    <li>POSITIONING</li>
+                    <li>INSPIRATION</li>
+                    <li>INSIGHT</li>
+                    <li>CREATIVITY</li>
+                    <li>CONVERGENCE</li>
+                    <li>STRATEGY</li>
+                    <li>NARRATIVE</li>
+                    <li>AFFORDANCE</li>
+                    <li>ENGAGEMENT</li>
+                 </ul>
+                 <ul class="row">
+                    <li>PERSONA</li>
+                    <li>JOURNEY MAP</li>
+                    <li>USER FLOW CHART</li>
+                    <li>DESIGN DRAFT</li>
+                    <li>VISUAL PERFORMANCE</li>
+                    <li>AB TEST</li>
+                    <li>DESIGN SYSTEM</li>
+                    <li>DESIGN TOKEN</li>
+                    <li>OKR</li>
+                    <li>QA</li>
+                 </ul>
+            </div>
+            <div class="author">by Lee, Dong-Hyeok</div>
+        </div>
+        <!-- keyword - end -->
+
+        <!-- resume - start -->
+        <div class="resume">
+            <div class="info">
+                <h3 data-motion="text">Product + UI/UIX Design Artworks</h3>
+                <ul class="info_list">
+                    <li>
+                        <strong data-motion="text">Product Designer</strong>
+                        <div data-motion="text">Lee, Dong-Hyeok</div>
+                    </li>
+                    <li>
+                        <strong data-motion="text">E-Mail</strong>
+                        <div data-motion="text">hyuck9859@naver.com</div>
+                    </li>
+                    <li>
+                        <strong data-motion="text">Mobile Contact</strong>
+                        <div data-motion="text">010.2709.9859</div>
+                    </li>
+                </ul>
+            </div>
+            <h2>
+                <span data-motion="text">다양한 경험과 융합적인 사고로 디자인을 풀어나가는</span>
+                <div data-motion="text">SPECTRUM.</div>
+            </h2>
+        </div>
+        <!-- resume - end -->
+    </div>
+    <!-- intro - end -->
+
+    <!-- wrap - start -->
+    <div id="wrap">
+        <header id="sidebar"><h1>SPECTRUM.</h1></header>
+
+        <nav>
+            <ul>
+                <li>Artwork</li>
+                <li><a href="page/about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="mark">
+                <span>SPECTRUM.</span>
+                <span>by Lee, Dong-Hyeok</span>
+            </div>
+            <div class="project" data-mouse="0">
+                <ul class="list">
+                    <!-- project 01 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 02 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 03 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 04 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="paging"><span class="current"></span><span class="total"></span></footer>
+    </div>
+    <!-- wrap - end -->
+    
+    <!-- script - start -->
+    <script src="js/common.js"></script>
+    <script>
+        const cursor = document.getElementById("mouse-cursor")
+
+        const intro = gsap.timeline();
+        intro.from("#sidebar h1", { opacity: 0, duration: .8, delay: 0.25 })
+        intro.from(".keyword .row li:nth-of-type(1)", { opacity: 0, duration: .2 })
+        intro.from(".keyword .row li:nth-of-type(2)", { opacity: 0, duration: .15 })
+        intro.from(".keyword .row li:nth-of-type(3)", { opacity: 0, duration: .15 })
+        intro.from(".keyword .row li:nth-of-type(4)", { opacity: 0, duration: .15 })
+        intro.from(".keyword .row li:nth-of-type(5)", { opacity: 0, duration: .1 })
+        intro.from(".keyword .row li:nth-of-type(6)", { opacity: 0, duration: .1 })
+        intro.from(".keyword .row li:nth-of-type(7)", { opacity: 0, duration: .05 })
+        intro.from(".keyword .row li:nth-of-type(8)", { opacity: 0, duration: .05 })
+        intro.from(".keyword .row li:nth-of-type(9)", { opacity: 0, duration: .05 })
+        intro.from(".keyword .row li:nth-of-type(10)", { opacity: 0, duration: .05 })
+        intro.from(".keyword .author", { opacity: 0, duration: .05 }, "<")
+        intro.to(".keyword .row li:nth-of-type(1)", { opacity: 0, duration: .4, delay: 0.8 })
+        intro.to(".keyword .row li:nth-of-type(2)", { opacity: 0, duration: .4 }, "<")
+        intro.to(".keyword .row li:nth-of-type(3)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .row li:nth-of-type(4)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .row li:nth-of-type(5)", { opacity: 0, duration: .05 }, "<")
+        intro.to(".keyword .row li:nth-of-type(6)", { opacity: 0, duration: .04 }, "<")
+        intro.to(".keyword .row li:nth-of-type(7)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .row li:nth-of-type(8)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .row li:nth-of-type(9)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .row li:nth-of-type(10)", { opacity: 0, duration: .15 }, "<")
+        intro.to(".keyword .author", { opacity: 0, duration: .4 }, "<")
+        intro.to(".keyword", { opacity: 0, delay: .25 })
+        intro.to(".keyword", { display: "none" }, "<")
+        intro.from(".resume", {
+            opacity: 1, duration: .15,
+            onComplete: function () {
+                document.querySelector(".keyword").remove();
+                cursor.classList.add("mode_scroll")
+                cursor.children[0].setAttribute("data-name", "scroll")
+                letterSlice(resumeTextSlice, 0.5)
+            }
+        })
+
+
+        // resume text motion - start
+        const resumeTextSlice = document.querySelectorAll(".resume [data-motion='text']")
+        txtSlice(resumeTextSlice)
+        function txtSlice(target) {
+            for (let itm of target) {
+                itm.innerHTML = itm.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                itm.style.overflow = 'hidden';
+                let letter = itm.children;
+                let letterArr = [];
+                for (let i of letter) {
+                    letterArr.push(i)
+                }
+
+            }
+        }
+
+        function letterSlice(target) {
+            for (let itm of target) {
+                let letterArr = itm.querySelectorAll(".letter")
+
+                letterArr.forEach(function (itm, idx) {
+                    idx = idx + 1;
+                    let delay = ((20 / letterArr.length) * idx * 0.02);
+                    itm.style.animationName = 'letter';
+                    itm.style.animationDuration = '.5s';
+                    itm.style.animationTimingFunction = 'ease-out';
+                    itm.style.animationFillMode = 'forwards';
+                    itm.style.animationDelay = `${delay}s`;
+                });
+            }
+        }
+        // resume text motion - end
+
+        // resume scroll out motion - start
+        function scrollFadeOut() {
+            if (cursor.classList.contains("mode_scroll")) {
+                document.querySelector(".resume").style.opacity = 0
+                cursor.classList.remove("mode_scroll")
+                cursor.children[0].removeAttribute("data-name")
+
+                setTimeout(() => {
+                    document.getElementById("intro").remove()
+                }, 500);
+            }
+        }
+        document.addEventListener("mousewheel", scrollFadeOut)
+        // resume scroll out motion - end
+
+        // project - start
+        const project = document.querySelector(".project")
+        const projectList = document.querySelectorAll('.project .list>li');
+        const pageTotal = document.querySelector('.paging .total');
+        const pageCurrent = document.querySelector('.paging .current');
+        pageTotal.innerHTML = projectList.length;
+        pageCurrent.innerHTML = '1';
+
+        function moveLeft() {
+            let move = gsap.timeline().to(project, {xPercent: "-=10", ease: "power3.easeOut", duration: 1})
+            // return move, console.log(count)
+        }
+        function moveRight() {
+            let move = gsap.timeline().to(project, {xPercent: "+=10", ease: "power3.easeOut", duration: 1})
+        }
+
+
+        const projectX = project.getBoundingClientRect().x
+
+        function scrollMount(mount){
+            let proX= project.getBoundingClientRect().x
+            let proW= project.getBoundingClientRect().width
+            let proMax = -(innerWidth / 2)
+            if(mount > 0 && proX > proMax){
+                moveLeft()
+                console.log(proX, proMax)
+            }
+
+            if(mount < 0 && proX < -166 ){
+                moveRight()
+            }
+
+            console.log(project.getBoundingClientRect())
+
+        }
+
+        window.addEventListener('wheel', (e) => {
+            if(e.deltaY){
+                scrollMount(e.deltaY)
+            }else if(e.detaX){
+                scrollMount(e.deltaX)
+            }
+        });
+
+
+        const projectLink = document.querySelectorAll('.project a')
+        for(let i of projectLink){
+            i.addEventListener('click', function(e){
+                document.getElementById('sidebar').style.zIndex = 'unset'
+                e.preventDefault()
+                const thumb = i.querySelector('img')
+                // const thumbClone = thumb.cloneNode(true)
+                // console.log(thumb.getBoundingClientRect())
+
+                // thumbClone.style.position = 'fixed'
+                // thumbClone.style.top = thumb.getBoundingClientRect().y  + 'px'
+                // thumbClone.style.left = thumb.getBoundingClientRect().x + 'px'
+                // thumbClone.style.transform = 'translate(50%, -60%)'
+
+                
+                // project.append(thumbClone)
+
+                // if(!thumb.nextElementSibling.classList.contains('clone')){
+                //     const thumbClone = thumb.cloneNode(true)
+                //     thumbClone.classList.add('clone')
+                //     thumb.after(thumbClone)
+                 
+                    
+                //     thumbClone.style.width = innerWidth + 'px'
+                //     thumbClone.style.height = innerHeight + 'px'
+                //     let ss = gsap.timeline()
+                //     .to('.clone', {width: `${innerWidth}px`})
+                // }
+            })
+        }
+        // project - end
+    </script>
+</body>
+</html>
