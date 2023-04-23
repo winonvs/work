@@ -2,7 +2,8 @@
 *{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Pretendard', sans-serif;line-height: 1;}
 a{display: inline-block;vertical-align: top;text-decoration: none;}
 ul{list-style: none;}
-body{min-width: 1200px;height: 100vh;background-color: #121619;color: #fff;cursor: none;overflow: hidden;}
+img{width:100%;}
+body{min-width: 1200px;background-color: #121619;color: #fff;cursor: none;}
 
 /* common */
 #mouse-cursor {position: fixed;top:0;left: 0;z-index: 10000;will-change: transform;transform: translate3d(-100%, -100%, 0);pointer-events: none;mix-blend-mode: difference;}
