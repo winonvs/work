@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1200">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.6/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- mouse cursor -->
+    <div id="mouse-cursor"><div></div></div>
+
+
+    <!-- wrap - start -->
+    <div id="wrap">
+        <header id="sidebar"><h1>SPECTRUM.</h1></header>
+
+        <nav>
+            <ul>
+                <li>Artwork</li>
+                <li><a href="page/about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="mark">
+                <span>SPECTRUM.</span>
+                <span>by Lee, Dong-Hyeok</span>
+            </div>
+            <div class="project" data-mount="0">
+                <ul class="list">
+                    <!-- project 01 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 02 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 03 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 04 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 01 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 02 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 03 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                    <!-- project 04 -->
+                    <li><a href="page/project_01.html">
+                        <img src="images/thumb/project_01.jpg" alt="">
+                        <div class="txt">
+                            <strong class="tit">Hover Project Name</strong>
+                            <p class="desc">Ordering Organization Name</p>
+                            <span class="theme">About Period</span>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="paging"><span class="current"></span><span class="total"></span></footer>
+    </div>
+    <!-- wrap - end -->
+    
+    <!-- script - start -->
+    <script src="js/common.js"></script>
+    <script>
+
+        // project - start
+        const project = document.querySelector(".project")
+        const projectList = document.querySelectorAll('.project .list>li');
+        const projectImg = document.querySelectorAll('.project img');
+        const pageTotal = document.querySelector('.paging .total');
+        const pageCurrent = document.querySelector('.paging .current');
+        pageTotal.innerHTML = projectList.length;
+        pageCurrent.innerHTML = '1';
+
+        function scrollMount(mount) {            
+            let mountData = Number(project.dataset.mount)
+            const max = (projectList.length * 332)
+            // max = Math.ceil(max / 100) * 100
+            mountData += mount
+
+            let pageNumber = Math.floor((mountData / max) * projectList.length) + 1
+
+            let avg = (mountData / max) * 100
+            for(let i of projectImg){
+                i.style.objectPosition = `${avg}% center`
+            }
+
+            if(pageNumber <= projectList.length && pageNumber != 0){
+                pageCurrent.innerHTML = pageNumber
+            }
+
+            if(mountData > 0){
+                project.dataset.mount = mountData
+            }else {
+                project.dataset.mount = 0
+            }
+
+            if(mountData > max) {
+                project.dataset.mount = max
+                mountData = max
+            }
+            
+            if(mount > 0){
+                let move = gsap.timeline().to(project, {x: `-${mountData}px`, ease: "power3.easeOut", duration: 1})
+            } else {
+                let move = gsap.timeline().to(project, {x: `-${mountData}px`, ease: "power3.easeOut", duration: 1})
+            }
+     
+        }
+
+        window.addEventListener('wheel', (e) => {
+            if(e.deltaY){
+                scrollMount(e.deltaY)
+            }else if(e.deltaX){
+                scrollMount(e.deltaX)
+            }
+        });
+
+        // const projectAnchor = document.querySelectorAll('.project a')
+        // for(let i of projectAnchor){
+        //     i.addEventListener('click', (e) => {
+        //         e.preventDefault()
+        //         let width = Math.floor(window.innerWidth / 332 * 100)
+        //         let height = Math.floor(window.innerHeight / 471 * 100)
+        //         width = width / 100
+        //         height = height / 100
+        //         console.log(width / 100)
+        //         console.log(i.querySelector('img'))
+        //         i.querySelector('.txt').remove()
+        //         i.querySelector('img').style.transform = `scale(${width}, ${height})`
+        //     })
+        // }
+        //project - end
+    </script>
+</body>
+</html>
